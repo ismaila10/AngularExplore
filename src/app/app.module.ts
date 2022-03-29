@@ -12,13 +12,17 @@ import { AppComponent } from './app.component';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { ReplaceComma } from './shared/pipe/replace-comma.pipe';
 import { StarRatingComponent } from './shared/components/star-rating/star-rating.component';
+import { HomeComponent } from './home/home.component';
+import { HotelDetailComponent } from './hotel-list/hotel-detail/hotel-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HotelListComponent,
     ReplaceComma,
-    StarRatingComponent
+    StarRatingComponent,
+    HomeComponent,
+    HotelDetailComponent
   ],
   imports: [
     BrowserModule,
