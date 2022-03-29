@@ -9,11 +9,13 @@ registerLocaleData(localeFr, 'fr');
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
+import { ReplaceComma } from './shared/pipe/replace-comma.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HotelListComponent
+    HotelListComponent,
+    ReplaceComma
   ],
   imports: [
     BrowserModule,
