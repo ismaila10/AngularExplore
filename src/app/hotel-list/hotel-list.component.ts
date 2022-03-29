@@ -15,13 +15,31 @@ export class HotelListComponent implements OnInit {
   receivedRating: string = '';
   hotels: IHotel[] = [];
   showBadge: boolean = false;
+  errorMsg: string = '';
   private _hotelFilter = 'mot';
   filteredHotels: IHotel[] = [];
 
   ngOnInit(): void {
-    this.hotels = this.hotelService.getHotels();
-    this.filteredHotels = this.hotels;
+    this.hotelService.getHotels()
+      .subscribe({
+        next: hotels => {
+          this.hotels = hotels;
+          this.filteredHotels = this.hotels;
+        },
+        error: err => this.errorMsg = err
+      });
     this.hotelFilter = "";
+  }
+
+  getHotels() {
+    this.hotelService.getHotels()
+      .subscribe({
+        next: hotels => {
+          this.hotels = hotels;
+          this.filteredHotels = this.hotels;
+        },
+        error: err => this.errorMsg = err
+      });
   }
 
   toggleIsNewBadge(): void {
