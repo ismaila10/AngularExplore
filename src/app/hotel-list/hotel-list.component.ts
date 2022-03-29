@@ -11,6 +11,7 @@ export class HotelListComponent implements OnInit {
   constructor() { }
 
   title: string = 'Hotels';
+  receivedRating: string = '';
   hotels: IHotel[] = [
     {
       hotelId: 1,
@@ -64,6 +65,10 @@ export class HotelListComponent implements OnInit {
 
     const response = this.hotels.filter(x => x.hotelName.toLocaleLowerCase().indexOf(criteria) != -1);
     return response;
+  }
+
+  receiveRatingClicked(message: string) : void {
+    this.receivedRating = message;
   }
 
 }
