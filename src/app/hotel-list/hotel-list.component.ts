@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IHotel } from './hotel'
+import { HotelListService } from './hotel-list.service';
 
 @Component({
   selector: 'app-hotel-list',
@@ -8,41 +9,17 @@ import { IHotel } from './hotel'
 })
 export class HotelListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private hotelService: HotelListService){}
 
   title: string = 'Hotels';
   receivedRating: string = '';
-  hotels: IHotel[] = [
-    {
-      hotelId: 1,
-      hotelName: "swiss",
-      description: "Top ok cool trankil nice génial, magnifique",
-      price: 120,
-      imageUrl: '',
-      rating: 3.5
-    },
-    {
-      hotelId: 2,
-      hotelName: "callback",
-      description: "Top ok cool trankil nice génial, magnifique",
-      price: 120,
-      imageUrl: '',
-      rating: 5
-    },
-    {
-      hotelId: 3,
-      hotelName: "amen",
-      description: "Top ok cool trankil nice génial, magnifique",
-      price: 120,
-      imageUrl: '',
-      rating: 2
-    }
-  ];
+  hotels: IHotel[] = [];
   showBadge: boolean = false;
   private _hotelFilter = 'mot';
   filteredHotels: IHotel[] = [];
 
   ngOnInit(): void {
+    this.hotels = this.hotelService.getHotels();
     this.filteredHotels = this.hotels;
     this.hotelFilter = "";
   }
