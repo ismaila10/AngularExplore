@@ -4,6 +4,7 @@ export interface IHotel {
   description: string;
   price: number;
   imageUrl: string;
+  rating: number;
 }
 
 export class Hotel implements IHotel{
@@ -13,6 +14,7 @@ export class Hotel implements IHotel{
     public description: string,
     public price: number,
     public imageUrl: string,
+    public rating: number,
   ){}
 
   getNewPrice(price: number): number {

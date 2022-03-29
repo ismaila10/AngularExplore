@@ -17,21 +17,24 @@ export class HotelListComponent implements OnInit {
       hotelName: "swiss",
       description: "Top ok cool trankil nice génial, magnifique",
       price: 120,
-      imageUrl: ''
+      imageUrl: '',
+      rating: 3.5
     },
     {
       hotelId: 2,
       hotelName: "callback",
       description: "Top ok cool trankil nice génial, magnifique",
       price: 120,
-      imageUrl: ''
+      imageUrl: '',
+      rating: 5
     },
     {
       hotelId: 3,
       hotelName: "amen",
       description: "Top ok cool trankil nice génial, magnifique",
       price: 120,
-      imageUrl: ''
+      imageUrl: '',
+      rating: 2
     }
   ];
   showBadge: boolean = false;
