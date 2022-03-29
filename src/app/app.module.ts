@@ -10,12 +10,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { ReplaceComma } from './shared/pipe/replace-comma.pipe';
+import { StarRatingComponent } from './shared/components/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HotelListComponent,
-    ReplaceComma
+    ReplaceComma,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,
