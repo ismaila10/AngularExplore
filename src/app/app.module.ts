@@ -15,6 +15,7 @@ import { StarRatingComponent } from './shared/components/star-rating/star-rating
 import { HomeComponent } from './home/home.component';
 import { HotelDetailComponent } from './hotel-list/hotel-detail/hotel-detail.component';
 import { RouterModule } from '@angular/router';
+import { HotelDetailGuard } from './hotel-list/hotel-detail.guard';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'hotels/:id', component: HotelDetailComponent },
+      { path: 'hotels/:id', component: HotelDetailComponent, canActivate: [HotelDetailGuard] },
       { path: 'hotels', component: HotelListComponent },
       { path: '**', redirectTo: 'home', pathMatch: 'full' },
     ])
