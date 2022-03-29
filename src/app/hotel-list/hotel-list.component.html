@@ -32,7 +32,14 @@
           <h5 class="card-title">{{hotel.hotelName}}</h5>
           <p class="card-text">{{hotel.description | replaceComma }}</p>
           <p class="card-text">{{ hotel.price | currency: 'EUR' : 'symbol' : '1.2-2' : 'fr' }}</p>
-          <app-star-rating [rating]="hotel.rating" (starRatingClicked)="receiveRatingClicked($event)"></app-star-rating>
+
+          <div class="d-flex justify-content-beetween align-items-baseline">
+            <app-star-rating [rating]="hotel.rating" (starRatingClicked)="receiveRatingClicked($event)"></app-star-rating>
+            <span class="material-icons bg-info text-white p-2 rounded-circle btn" [routerLink]="['/hotels',hotel.hotelId]">
+              keyboard_arrow_right
+            </span>
+          </div>
+
           <span *ngIf="showBadge" class="badge bg-info">Nouveau</span>
         </div>
       </div>
